@@ -308,94 +308,113 @@ section {
     background: var(--bg-light);
 }
 
-.schedule-timeline {
-    max-width: 700px;
+.schedule-table-wrapper {
+    max-width: 900px;
     margin: 0 auto;
-    position: relative;
-    padding: 2rem 0;
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
 }
 
-.schedule-timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
-    opacity: 0.3;
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-white);
 }
 
-.timeline-item {
-    margin-bottom: 2rem;
-    position: relative;
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
+.schedule-table thead {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
 }
 
-.timeline-item:nth-child(odd) {
-    padding-right: 50%;
-    text-align: right;
-}
-
-.timeline-item:nth-child(even) {
-    padding-left: 50%;
+.schedule-table th {
+    padding: 1.5rem;
     text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    box-shadow: 0 0 0 4px var(--bg-light), 0 0 0 6px var(--primary-color);
+.schedule-table th:first-child {
+    width: 15%;
+    padding-left: 2rem;
 }
 
-.timeline-item.break::before {
-    background: #ffa500;
-    box-shadow: 0 0 0 4px var(--bg-light), 0 0 0 6px #ffa500;
+.schedule-table th:last-child {
+    padding-right: 2rem;
 }
 
-.timeline-item.panel::before {
-    background: var(--secondary-color);
-    box-shadow: 0 0 0 4px var(--bg-light), 0 0 0 6px var(--secondary-color);
+.schedule-table tbody tr {
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
 }
 
-.timeline-item.poster::before {
-    background: var(--accent-color);
-    box-shadow: 0 0 0 4px var(--bg-light), 0 0 0 6px var(--accent-color);
+.schedule-table tbody tr:last-child {
+    border-bottom: none;
 }
 
-.timeline-time {
+.schedule-table tbody tr:hover {
+    background-color: rgba(102, 126, 234, 0.03);
+}
+
+.time-cell {
     font-weight: 600;
     color: var(--primary-color);
+    width: 15%;
+    white-space: nowrap;
+    padding: 1.25rem 2rem 1.25rem 2rem;
     font-size: 0.95rem;
-    min-width: 80px;
 }
 
-.timeline-content {
-    background: var(--bg-white);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: var(--shadow-sm);
-    flex: 1;
-}
-
-.timeline-content h4 {
-    margin-bottom: 0.5rem;
+.event-cell {
+    padding: 1.25rem 2rem;
     color: var(--text-dark);
+    font-size: 0.95rem;
 }
 
-.timeline-content p {
-    margin: 0;
-    font-size: 0.95rem;
+/* Event type styling */
+.event-row.break {
+    background-color: rgba(255, 165, 0, 0.05);
+}
+
+.event-row.break .time-cell {
+    color: #ff9500;
+    font-weight: 700;
+}
+
+.event-row.keynote {
+    background-color: rgba(102, 126, 234, 0.08);
+}
+
+.event-row.keynote .time-cell {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.event-row.panel {
+    background-color: rgba(118, 75, 162, 0.08);
+}
+
+.event-row.panel .time-cell {
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.event-row.poster {
+    background-color: rgba(240, 147, 251, 0.08);
+}
+
+.event-row.poster .time-cell {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.note {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 0.25rem;
+    font-weight: 400;
+    font-style: italic;
 }
 
 /* ===========================
