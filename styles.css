@@ -497,6 +497,15 @@ section {
     margin-bottom: 0.5rem;
 }
 
+.speaker-card h3 a {
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+.speaker-card h3 a:hover {
+    color: var(--primary-color);
+}
+
 .speaker-title {
     font-size: 1rem;
     color: var(--primary-color);
@@ -581,7 +590,7 @@ section {
 
 .organizers-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -788,7 +797,7 @@ section {
 
     /* Organizers */
     .organizers-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
 
