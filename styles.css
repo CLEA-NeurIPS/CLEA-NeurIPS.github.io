@@ -306,7 +306,7 @@ section {
 
 .detail-item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
@@ -315,7 +315,7 @@ section {
     border: 1px solid rgba(32, 217, 255, 0.2);
     border-radius: 8px;
     background: transparent;
-    min-height: 80px;
+    min-height: 60px;
 }
 
 .detail-icon {
