@@ -254,12 +254,15 @@ section {
 }
 
 .topics-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
+    justify-content: center;
 }
 
 .topic-card {
+    flex: 0 1 calc(20% - 1.6rem);
+    min-width: 280px;
     background: rgba(9, 17, 38, 0.7);
     border: 1px solid rgba(32, 217, 255, 0.15);
     border-radius: 12px;
