@@ -149,7 +149,6 @@
 
         function updateProgress() {
             let currentStage = 0;
-            const scrollY = window.scrollY;
 
             stageSections.forEach(item => {
                 const elements = document.querySelectorAll(item.selector);
@@ -177,13 +176,13 @@
 
     function initHeadingMotifs() {
         const headings = [
-            { selector: '.about h2', color: 'var(--cyan)' },
-            { selector: '.topics h3', color: 'var(--blue)' },
-            { selector: '.speakers h2', color: 'var(--violet)' },
-            { selector: '.schedule h2', color: 'var(--orange)' }
+            { selector: '.about h2' },
+            { selector: '.topics h3' },
+            { selector: '.speakers h2' },
+            { selector: '.schedule h2' }
         ];
 
-        headings.forEach(({ selector, color }) => {
+        headings.forEach(({ selector }) => {
             const heading = document.querySelector(selector);
             if (!heading) return;
 
