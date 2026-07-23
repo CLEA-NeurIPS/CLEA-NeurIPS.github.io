@@ -694,6 +694,11 @@ section {
     text-align: center;
 }
 
+.organizer-image-link {
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .organizer-image {
     width: 150px;
     height: 150px;
@@ -706,6 +711,12 @@ section {
     align-items: center;
     justify-content: center;
     border: 2px solid rgba(32, 217, 255, 0.2);
+    transition: var(--transition);
+}
+
+.organizer-image-link:hover .organizer-image {
+    box-shadow: 0 12px 36px rgb(32 217 255 / 20%);
+    transform: scale(1.05);
 }
 
 .organizer-photo {
@@ -724,6 +735,16 @@ section {
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
     color: var(--text);
+}
+
+.organizer-card h3 a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.organizer-card h3 a:hover {
+    color: var(--cyan);
 }
 
 .organizer-title {
