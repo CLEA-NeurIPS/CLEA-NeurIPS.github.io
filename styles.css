@@ -683,11 +683,17 @@ section {
 }
 
 .organizers-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    justify-content: center;
+}
+
+.organizer-card {
+    flex: 0 1 calc(25% - 1.5rem);
+    min-width: 250px;
 }
 
 .organizer-card {
