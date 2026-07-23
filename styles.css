@@ -178,6 +178,23 @@ section {
     width: 100%;
 }
 
+.nav-links li:last-child a {
+    background: linear-gradient(135deg, var(--cyan), var(--blue));
+    color: var(--bg);
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.nav-links li:last-child a:hover {
+    color: var(--bg);
+    opacity: 0.9;
+}
+
+.nav-links li:last-child a::after {
+    display: none;
+}
+
 /* ===========================
    HERO SECTION
    =========================== */
