@@ -320,14 +320,7 @@ section {
     flex-shrink: 0;
 }
 
-.detail-content strong {
-    color: var(--text);
-    display: block;
-    font-size: 0.95rem;
-    margin-bottom: 0.25rem;
-}
-
-.detail-content p {
+.detail-item p {
     color: var(--muted);
     font-size: 0.95rem;
     margin: 0;
