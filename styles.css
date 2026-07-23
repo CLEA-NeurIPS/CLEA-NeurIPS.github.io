@@ -184,16 +184,16 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 60vh;
-    padding: clamp(2rem, 5vw, 4rem) clamp(1.25rem, 6vw, 6rem);
+    min-height: 40vh;
+    padding: clamp(2rem, 4vw, 3rem) clamp(1.25rem, 6vw, 6rem);
     background: transparent;
 }
 
 .hero-visual {
     display: block;
-    width: min(100%, 1600px);
+    width: min(100%, 900px);
     height: auto;
-    max-height: 600px;
+    max-height: 400px;
     object-fit: contain;
     border-radius: 20px;
     filter: drop-shadow(0 22px 60px rgb(32 120 255 / 16%));
