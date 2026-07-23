@@ -191,9 +191,9 @@ section {
 
 .hero-visual {
     display: block;
-    width: min(100%, 1200px);
+    width: min(100%, 1500px);
     height: auto;
-    max-height: 400px;
+    max-height: 600px;
     object-fit: contain;
     border-radius: 20px;
     filter: drop-shadow(0 22px 60px rgb(32 120 255 / 16%));
