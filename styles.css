@@ -203,7 +203,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 25vh;
+    min-height: 35vh;
     padding: clamp(1.5rem, 3vw, 2rem) clamp(1.25rem, 6vw, 6rem);
     background: transparent;
 }
@@ -212,7 +212,7 @@ section {
     display: block;
     width: 100%;
     height: auto;
-    max-height: 400px;
+    max-height: 550px;
     object-fit: contain;
     border-radius: 20px;
     filter: drop-shadow(0 22px 60px rgb(32 120 255 / 16%));
