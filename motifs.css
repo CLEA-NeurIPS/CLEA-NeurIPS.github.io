@@ -1,0 +1,453 @@
+/* ===========================
+   CLEA DYNAMIC MOTIF SYSTEM
+   =========================== */
+
+/* Smooth scrolling and motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===========================
+   ANIMATED BACKGROUND NETWORKS
+   =========================== */
+
+.motif-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.motif-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Section-specific motif styling */
+.about,
+.topics,
+.speakers,
+.schedule {
+    position: relative;
+}
+
+.about::before,
+.topics::before,
+.speakers::before,
+.schedule::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 50%, rgba(32, 217, 255, 0.03), transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.03), transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ===========================
+   FLOWING TRANSITION PATHS
+   =========================== */
+
+.transition-path {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.transition-path svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.path-stroke {
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    filter: drop-shadow(0 0 2px rgba(32, 217, 255, 0.3));
+}
+
+.path-dot {
+    r: 2;
+    filter: drop-shadow(0 0 4px currentColor);
+}
+
+/* Animate dots along paths */
+@keyframes flow-path {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.path-animated {
+    stroke-dasharray: 1000;
+    animation: flow-path 18s linear infinite;
+}
+
+/* ===========================
+   INTERACTIVE CARD GLOWS
+   =========================== */
+
+.topic-card,
+.cfp-box,
+.detail-item {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.topic-card::before,
+.cfp-box::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(32, 217, 255, 0.15), transparent 70%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: width 0.6s ease-out, height 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.topic-card:hover::before,
+.cfp-box:hover::before {
+    width: 300px;
+    height: 300px;
+    opacity: 1;
+}
+
+.topic-card:hover,
+.cfp-box:hover {
+    border-color: rgba(32, 217, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   LEARN–ADAPT–EVOLVE–APPLY INDICATOR
+   =========================== */
+
+.progress-indicator {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    z-index: 30;
+    pointer-events: none;
+}
+
+.progress-stage {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    opacity: 0.4;
+    transition: opacity 0.4s ease;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.progress-stage.active {
+    opacity: 1;
+}
+
+.progress-stage.active span {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.progress-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+}
+
+.progress-stage.active .progress-dot {
+    box-shadow: 0 0 12px currentColor, inset 0 0 4px rgba(255, 255, 255, 0.5);
+    transform: scale(1.4);
+}
+
+.progress-stage:nth-child(1) { --stage-color: var(--cyan); color: var(--cyan); }
+.progress-stage:nth-child(2) { --stage-color: var(--violet); color: var(--violet); }
+.progress-stage:nth-child(3) { --stage-color: var(--orange); color: var(--orange); }
+.progress-stage:nth-child(4) { --stage-color: #fbbf24; color: #fbbf24; }
+
+@keyframes pulse-glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 4px currentColor);
+    }
+    50% {
+        filter: drop-shadow(0 0 12px currentColor);
+    }
+}
+
+@media (max-width: 1024px) {
+    .progress-indicator {
+        display: none;
+    }
+}
+
+/* ===========================
+   SECTION HEADING MOTIFS
+   =========================== */
+
+.section-motif {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-right: 1rem;
+}
+
+.motif-node {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 8px currentColor;
+    animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+.motif-line {
+    width: 24px;
+    height: 1px;
+    background: linear-gradient(90deg, currentColor, transparent);
+}
+
+.about h2 .section-motif { color: var(--cyan); }
+.topics h3 .section-motif { color: var(--blue); }
+.speakers h2 .section-motif { color: var(--violet); }
+.schedule h2 .section-motif { color: var(--orange); }
+
+/* ===========================
+   INFINITY-PATH CTA ANIMATION
+   =========================== */
+
+.cta-infinity {
+    position: relative;
+    overflow: hidden;
+}
+
+.infinity-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(32, 217, 255, 0.4));
+    box-shadow: 0 0 8px rgba(32, 217, 255, 0.6);
+    pointer-events: none;
+}
+
+/* Particle travels infinity path - implemented via offset-path when supported */
+@supports (offset-path: path('M 0 0')) {
+    .infinity-particle {
+        animation: infinity-travel 8s linear infinite;
+    }
+
+    @keyframes infinity-travel {
+        0%, 100% { opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+    }
+}
+
+/* Fallback for browsers without offset-path */
+@supports not (offset-path: path('M 0 0')) {
+    .infinity-particle {
+        animation: pulse-glow 2s ease-in-out infinite;
+    }
+}
+
+/* ===========================
+   SCHEDULE TIMELINE STYLING
+   =========================== */
+
+.schedule-timeline {
+    position: relative;
+    padding-left: 40px;
+}
+
+.schedule-timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--cyan), var(--violet), var(--orange));
+    opacity: 0.3;
+}
+
+.timeline-event {
+    position: relative;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-left: 3px solid var(--cyan);
+    border-radius: 8px;
+    background: rgba(9, 17, 38, 0.4);
+    transition: all 0.3s ease;
+}
+
+.timeline-event::before {
+    content: '';
+    position: absolute;
+    left: -13px;
+    top: 1.5rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--cyan);
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 12px var(--cyan);
+}
+
+.timeline-event:hover {
+    transform: translateX(4px);
+    border-left-color: var(--blue);
+    background: rgba(9, 17, 38, 0.6);
+}
+
+.timeline-event:nth-child(3n+2)::before {
+    background: var(--violet);
+    box-shadow: 0 0 12px var(--violet);
+}
+
+.timeline-event:nth-child(3n+2) {
+    border-left-color: var(--violet);
+}
+
+.timeline-event:nth-child(3n) {
+    border-left-color: var(--orange);
+}
+
+.timeline-event:nth-child(3n)::before {
+    background: var(--orange);
+    box-shadow: 0 0 12px var(--orange);
+}
+
+/* ===========================
+   SMOOTH TRANSITIONS BETWEEN SECTIONS
+   =========================== */
+
+.section-divider {
+    height: 1px;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(32, 217, 255, 0.1),
+        rgba(168, 85, 247, 0.1),
+        transparent);
+    margin: 4rem 0;
+    position: relative;
+    opacity: 0.5;
+}
+
+.section-divider::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--cyan);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 8px var(--cyan);
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ===========================
+   ACCESSIBILITY & PERFORMANCE
+   =========================== */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .motif-node,
+    .progress-dot,
+    .section-divider::after,
+    .infinity-particle,
+    .timeline-event::before,
+    .path-animated {
+        animation: none !important;
+        box-shadow: none !important;
+    }
+
+    .topic-card:hover::before,
+    .cfp-box:hover::before {
+        animation: none;
+        opacity: 0;
+    }
+
+    .progress-stage:hover {
+        opacity: 0.4;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+    .motif-bg,
+    .transition-path {
+        opacity: 0.15;
+    }
+
+    .detail-item {
+        border-width: 2px;
+    }
+}
+
+/* Disable decorative elements on very small screens */
+@media (max-width: 480px) {
+    .motif-bg,
+    .transition-path,
+    .section-divider {
+        display: none;
+    }
+
+    .progress-indicator {
+        display: none;
+    }
+
+    .section-motif {
+        display: none;
+    }
+}
+
+/* Optimize performance: pause animations when off-screen */
+@media (prefers-reduced-motion: no-preference) {
+    :not(:focus-visible):not(:hover) .motif-node,
+    :not(:focus-visible):not(:hover) .progress-dot {
+        will-change: auto;
+    }
+
+    :focus-visible .progress-dot {
+        outline: 2px solid var(--cyan);
+        outline-offset: 4px;
+    }
+}
