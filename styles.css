@@ -278,8 +278,24 @@ section {
     background: transparent;
 }
 
-.schedule-table-wrapper {
+.schedule-details {
     max-width: 900px;
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+.schedule-details p {
+    color: var(--muted);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.schedule-details strong {
+    color: var(--text);
+}
+
+.schedule-table-wrapper {
+    max-width: 1100px;
     margin: 0 auto;
     overflow-x: auto;
     border-radius: 12px;
