@@ -467,6 +467,11 @@ section {
     transform: translateY(-8px);
 }
 
+.speaker-image-link {
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .speaker-image {
     width: 180px;
     height: 180px;
@@ -479,6 +484,12 @@ section {
     align-items: center;
     justify-content: center;
     border: 2px solid rgba(32, 217, 255, 0.2);
+    transition: var(--transition);
+}
+
+.speaker-image-link:hover .speaker-image {
+    box-shadow: 0 12px 48px rgb(32 217 255 / 25%);
+    transform: scale(1.05);
 }
 
 .speaker-photo {
