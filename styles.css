@@ -212,7 +212,7 @@ section {
     display: block;
     width: 100%;
     height: auto;
-    max-height: 550px;
+    max-height: 480px;
     object-fit: contain;
     border-radius: 20px;
     filter: drop-shadow(0 22px 60px rgb(32 120 255 / 16%));
