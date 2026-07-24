@@ -629,6 +629,26 @@ section {
     line-height: 1.6;
 }
 
+.paper-category {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(32, 217, 255, 0.1);
+}
+
+.paper-category:last-of-type {
+    border-bottom: none;
+}
+
+.paper-category h4 {
+    color: var(--cyan);
+    margin-bottom: 0.5rem;
+}
+
+.paper-category p {
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+}
+
 .submission-portal {
     border-left-color: var(--violet);
 }
