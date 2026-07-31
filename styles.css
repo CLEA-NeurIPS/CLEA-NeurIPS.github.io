@@ -662,6 +662,75 @@ section {
 }
 
 /* ===========================
+   CALL FOR REVIEWERS SECTION
+   =========================== */
+
+.call-for-reviewers {
+    background: transparent;
+}
+
+.reviewers-content {
+    display: flex;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.reviewers-box {
+    background: rgba(9, 17, 38, 0.7);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgb(32 120 255 / 8%);
+    border: 1px solid rgba(32, 217, 255, 0.15);
+    border-left: 4px solid var(--violet);
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.reviewers-box:hover {
+    box-shadow: 0 12px 40px rgb(168 85 247 / 15%);
+    transform: translateY(-4px);
+    background: rgba(9, 17, 38, 0.9);
+}
+
+.reviewers-box h3 {
+    color: var(--violet);
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+}
+
+.reviewers-box p {
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.reviewer-cta {
+    margin-top: 2rem;
+}
+
+.reviewer-button {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: linear-gradient(135deg, var(--violet), #d946ef);
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.reviewer-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgb(168 85 247 / 30%);
+    color: white;
+}
+
+/* ===========================
    BUTTON STYLES
    =========================== */
 
