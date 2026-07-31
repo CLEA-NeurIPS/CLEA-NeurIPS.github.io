@@ -685,7 +685,10 @@ section {
     border-left: 4px solid var(--violet);
     transition: var(--transition);
     backdrop-filter: blur(10px);
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
 }
 
 .reviewers-box:hover {
@@ -694,20 +697,31 @@ section {
     background: rgba(9, 17, 38, 0.9);
 }
 
+.reviewers-text {
+    flex: 1;
+    text-align: left;
+}
+
 .reviewers-box h3 {
     color: var(--violet);
     margin-bottom: 0.75rem;
     font-size: 1.5rem;
+    text-align: left;
 }
 
 .reviewers-box p {
     color: var(--muted);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     line-height: 1.6;
+    text-align: left;
+}
+
+.reviewers-box p:last-of-type {
+    margin-bottom: 0;
 }
 
 .reviewer-cta {
-    margin-top: 2rem;
+    flex-shrink: 0;
 }
 
 .reviewer-button {
@@ -722,6 +736,7 @@ section {
     transition: var(--transition);
     border: none;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .reviewer-button:hover {
