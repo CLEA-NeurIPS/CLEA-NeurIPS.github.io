@@ -314,11 +314,13 @@ section {
     justify-content: center;
     gap: 0.5rem;
     text-align: center;
-    padding: 1rem 0.75rem;
+    padding: 1rem 2.5rem;
     border: 1px solid rgba(32, 217, 255, 0.2);
     border-radius: 8px;
     background: transparent;
     min-height: 60px;
+    min-width: min(260px, 100%);
+    box-sizing: border-box;
 }
 
 .detail-icon {
@@ -330,6 +332,7 @@ section {
 .detail-item p {
     color: var(--muted);
     font-size: 0.85rem;
+    font-weight: 700;
     margin: 0;
     line-height: 1.3;
 }
