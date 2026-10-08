@@ -1141,7 +1141,9 @@ section {
     top: var(--header-h);
     z-index: 20;
     margin-bottom: 0.75rem;
-    padding: 0.6rem 0;
+    padding: 1.5rem 2rem;
+    margin-left: -2rem;
+    margin-right: -2rem;
     background: var(--bg);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgb(32 217 255 / 10%);
@@ -1230,6 +1232,8 @@ section {
     .reviewers-list h2 {
         position: static;
         padding: 0;
+        margin-left: 0;
+        margin-right: 0;
         border-bottom: none;
     }
 }
