@@ -1121,3 +1121,70 @@ section {
         font-size: 0.85rem;
     }
 }
+
+/* ===========================
+   REVIEWERS LIST SECTION
+   =========================== */
+
+.reviewers-list {
+    background: transparent;
+}
+
+.reviewers-intro {
+    text-align: center;
+    color: var(--muted);
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+}
+
+.reviewers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.reviewer-card {
+    background: var(--surface);
+    border: 1px solid rgb(32 217 255 / 12%);
+    border-left: 3px solid var(--cyan);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    transition: var(--transition);
+}
+
+.reviewer-card:hover {
+    border-color: rgb(32 217 255 / 35%);
+    box-shadow: 0 8px 24px rgb(32 217 255 / 10%);
+    transform: translateY(-2px);
+}
+
+.reviewer-card h3 {
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 0.35rem;
+    line-height: 1.35;
+}
+
+.reviewer-position {
+    font-size: 0.85rem;
+    color: var(--cyan);
+    font-weight: 500;
+    margin-bottom: 0.15rem;
+    line-height: 1.4;
+}
+
+.reviewer-org {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .reviewers-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
