@@ -15,7 +15,7 @@
     --violet: #a855f7;
     --orange: #ff9d1c;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --header-h: 4.5rem;
+    --header-h: 4rem;
 }
 
 * {
@@ -1139,7 +1139,7 @@ section {
 .reviewers-list h2 {
     position: sticky;
     top: var(--header-h);
-    z-index: 20;
+    z-index: 30;
     margin-bottom: 0.75rem;
     padding: 1.5rem 2rem;
     margin-left: -2rem;
@@ -1171,6 +1171,8 @@ section {
     border-radius: 8px;
     padding: 1rem 1.25rem;
     transition: var(--transition);
+    position: relative;
+    z-index: 1;
 }
 
 .reviewer-card:hover {
