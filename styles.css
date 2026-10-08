@@ -1106,7 +1106,8 @@ section {
         gap: 0.75rem;
     }
 
-    .nav-links a {
+    .nav-links a,
+    .nav-disabled {
         font-size: 0.85rem;
     }
 
@@ -1238,4 +1239,16 @@ section {
         margin-right: 0;
         border-bottom: none;
     }
+}
+
+/* Disabled nav item (e.g. Submit once submissions close). A <span> rather
+   than an <a>, so there is no link target at all; the font properties are
+   restated because `.nav-links a` does not match a span. */
+.nav-disabled {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--muted);
+    opacity: 0.6;
+    cursor: not-allowed;
+    user-select: none;
 }
