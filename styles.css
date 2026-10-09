@@ -143,21 +143,51 @@ section {
     background-clip: text;
     font-size: 1.5rem;
     margin: 0;
+    white-space: nowrap;
 }
 
+/* The gap shrinks with the viewport and labels never wrap, so the whole nav
+   stays on one row down to the 768px breakpoint, where it stacks. */
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: clamp(0.6rem, 1.6vw, 1.75rem);
     align-items: center;
+    white-space: nowrap;
 }
 
 .nav-links a {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 500;
     color: var(--muted);
     position: relative;
     transition: color 0.3s ease;
+}
+
+/* Tablet widths, just above the 768px stacking breakpoint: tighten the bar
+   further so brand and links still share one row. */
+@media (min-width: 769px) and (max-width: 1000px) {
+    .navbar .container {
+        padding: 0.9rem 1rem;
+        gap: 0.75rem;
+    }
+
+    .nav-brand h1 {
+        font-size: 1.1rem;
+    }
+
+    .nav-links {
+        gap: 0.55rem;
+    }
+
+    .nav-links a,
+    .nav-links .nav-disabled {
+        font-size: 0.75rem;
+    }
+
+    .nav-links .nav-disabled {
+        padding: 0.35rem 0.7rem;
+    }
 }
 
 .nav-links a:hover {
@@ -1253,7 +1283,7 @@ section {
    restated because `.nav-links a` does not match a span. */
 .nav-disabled {
     display: inline-block;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 500;
     color: #1f2937;
     background: #9ca3af;
