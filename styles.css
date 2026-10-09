@@ -657,6 +657,11 @@ section {
     font-weight: 600;
 }
 
+.date-passed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
 .cfp-guidelines {
     list-style: disc;
     padding-left: 1.5rem;
