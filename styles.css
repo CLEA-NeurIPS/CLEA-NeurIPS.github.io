@@ -405,6 +405,7 @@ section {
     text-align: left;
     font-weight: 600;
     letter-spacing: 0.5px;
+    white-space: nowrap;
 }
 
 .schedule-table th:first-child {
