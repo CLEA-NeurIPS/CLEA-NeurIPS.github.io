@@ -1263,3 +1263,63 @@ section {
     cursor: not-allowed;
     user-select: none;
 }
+
+/* ===========================
+   ACCEPTED PAPERS
+   =========================== */
+
+.accepted-papers {
+    background: transparent;
+}
+
+.papers-list {
+    list-style: none;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    gap: 0.9rem;
+}
+
+.paper-card {
+    background: var(--surface);
+    border: 1px solid rgb(32 217 255 / 12%);
+    border-left: 3px solid var(--cyan);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    transition: var(--transition);
+}
+
+.paper-card.oral {
+    border-left-color: var(--orange);
+}
+
+.paper-card:hover {
+    border-color: rgb(32 217 255 / 35%);
+    box-shadow: 0 8px 24px rgb(32 217 255 / 10%);
+}
+
+.paper-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+    margin-bottom: 0.35rem;
+}
+
+.paper-badge {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--cyan);
+    white-space: nowrap;
+}
+
+.paper-badge.oral {
+    color: var(--orange);
+}
+
+.paper-authors {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 0;
+}
