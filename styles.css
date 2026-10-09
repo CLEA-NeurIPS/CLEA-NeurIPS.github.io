@@ -1176,11 +1176,15 @@ section {
     background: transparent;
 }
 
-/* Sticky section heading: sits just under the site header, which is itself
-   sticky at top: 0. --header-h approximates that header's height so the two
-   never overlap. */
-.reviewers-list h2,
-.accepted-papers h2 {
+/* Sticky section headings: each sits just under the site header, which is
+   itself sticky at top: 0, until its section scrolls away. --header-h
+   approximates that header's height so the two never overlap. */
+.cfp h2,
+.schedule h2,
+.accepted-papers h2,
+.speakers h2,
+.organizers h2,
+.reviewers-list h2 {
     position: sticky;
     top: var(--header-h);
     z-index: 30;
@@ -1275,8 +1279,12 @@ section {
 /* The nav stacks into a tall column below 768px, so a heading pinned beneath
    it would eat half the viewport. Keep the sticky heading to wider screens. */
 @media (max-width: 768px) {
-    .reviewers-list h2,
-    .accepted-papers h2 {
+    .cfp h2,
+    .schedule h2,
+    .accepted-papers h2,
+    .speakers h2,
+    .organizers h2,
+    .reviewers-list h2 {
         position: static;
         padding: 0;
         margin-left: 0;
