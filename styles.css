@@ -526,15 +526,19 @@ section {
     background: transparent;
 }
 
+/* Flex rather than grid so a short last row (e.g. 2 + 1) stays centered. */
 .speakers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 3rem;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .speaker-card {
+    flex: 1 1 260px;
+    max-width: 300px;
     text-align: center;
     transition: var(--transition);
 }
@@ -611,6 +615,16 @@ section {
     font-size: 1rem;
     color: var(--cyan);
     font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.speaker-title:has(+ .speaker-role) {
+    margin-bottom: 0.25rem;
+}
+
+.speaker-role {
+    font-size: 0.9rem;
+    color: var(--muted);
     margin-bottom: 1rem;
 }
 
