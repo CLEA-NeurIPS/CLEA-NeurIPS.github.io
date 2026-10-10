@@ -618,16 +618,6 @@ section {
     margin-bottom: 1rem;
 }
 
-.speaker-title:has(+ .speaker-role) {
-    margin-bottom: 0.25rem;
-}
-
-.speaker-role {
-    font-size: 0.9rem;
-    color: var(--muted);
-    margin-bottom: 1rem;
-}
-
 .speaker-bio {
     font-size: 0.95rem;
     line-height: 1.7;
